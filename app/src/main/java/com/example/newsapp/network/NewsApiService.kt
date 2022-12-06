@@ -21,8 +21,30 @@ interface NewsApiService {
         @Query("category") category :List<String>)
 
         :Response<NewsResponse>
+
+
 //        @Query("country") country :List<String>,
 //        @Query("category") category :List<String>,
 
 
-}
+
+    @GET("news?")
+    suspend fun getFinanceNews(
+        @Query("apikey") apiKey :String,
+        @Query("language") lang :String,
+        @Query("category") category :List<String>)
+
+            :Response<NewsResponse>
+
+
+//    @GET("")
+//    suspend fun getNewsDetails(
+//        @Query("apikey") apiKey :String,
+//        @Query("language") lang :String,
+//        @Query("category") category :List<String>)
+//
+//            :Response<NewsResponse>{
+//
+    }
+
+

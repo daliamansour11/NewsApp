@@ -101,7 +101,7 @@
                 android:layout_marginBottom="56dp"
                 android:background="@drawable/image_shape"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/ic_launcher_foreground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent" />

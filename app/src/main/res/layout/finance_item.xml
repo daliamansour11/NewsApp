@@ -7,7 +7,7 @@
     android:id="@+id/root_parent"
     >
     <androidx.cardview.widget.CardView
-        android:id="@+id/news_item"
+        android:id="@+id/fnews_item"
         android:layout_width="match_parent"
         android:layout_height="340dp"
         android:layout_marginBottom="35dp"
@@ -28,7 +28,7 @@
             android:background="#EFEEEE">
 
             <TextView
-                android:id="@+id/publis_date"
+                android:id="@+id/fpublis_date"
                 android:layout_width="153dp"
                 android:layout_height="24dp"
                 android:layout_margin="10dp"
@@ -40,17 +40,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/source_name"
+                android:id="@+id/fsource_name"
                 android:layout_width="206dp"
                 android:layout_height="22dp"
                 android:layout_margin="10dp"
                 android:gravity="left"
                 android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/publis_date"
+                app:layout_constraintStart_toEndOf="@+id/fpublis_date"
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView
-                android:id="@+id/tvTitle"
+                android:id="@+id/ftvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -62,7 +62,7 @@
                 android:text="This is a very long title and here it is"
                 android:textColor="#212121"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+                app:layout_constraintBottom_toTopOf="@+id/ftvDescription"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -78,7 +78,7 @@
 
 
             <TextView
-                android:id="@+id/tvDescription"
+                android:id="@+id/ftvDescription"
                 android:layout_width="391dp"
                 android:layout_height="50dp"
                 android:layout_margin="9dp"
@@ -88,13 +88,13 @@
                 android:lines="2"
                 android:text="This is a very long title and here it is"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView"
-                app:layout_constraintEnd_toEndOf="@id/tvTitle"
+                app:layout_constraintBottom_toTopOf="@+id/fimageView"
+                app:layout_constraintEnd_toEndOf="@id/ftvTitle"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvTitle" />
+                app:layout_constraintStart_toStartOf="@+id/ftvTitle" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/fimageView"
                 android:layout_width="388dp"
                 android:layout_height="145dp"
                 android:layout_marginEnd="4dp"
@@ -107,7 +107,7 @@
                 app:layout_constraintLeft_toLeftOf="parent" />
 
             <ImageView
-                android:id="@+id/shar_icon"
+                android:id="@+id/fshar_icon"
                 android:layout_width="70dp"
                 android:layout_height="40dp"
                 android:layout_margin="7dp"
@@ -115,7 +115,7 @@
                 android:src="@drawable/ic_baseline_share_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/fimageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
