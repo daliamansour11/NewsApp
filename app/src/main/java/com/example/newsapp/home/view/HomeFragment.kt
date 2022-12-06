@@ -6,33 +6,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TableLayout
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.example.newsapp.Constant
-import com.example.newsapp.DetailsFragment
 import com.example.newsapp.R
+import com.example.newsapp.details.view.Details_Fragment
 import com.example.newsapp.home.model.Result
 import com.example.newsapp.home.viewModel.HomeViewModel
 import com.example.newsapp.home.viewModel.HomeViewModelFactoryon
 import com.example.newsapp.network.Api
 import com.example.newsapp.repository.HomeRepository
 import kotlin.streams.toList
+class homeFragment : Fragment(),onItemClickListener {
+    lateinit var homeViewModel: HomeViewModel
 
-class homeFragment : Fragment(),onItemClickListener{
-   lateinit var  homeViewModel :HomeViewModel
-   // val catgoryList = listOf<String>("politics","science","health" ,"business","sports","technology",)
+    // val catgoryList = listOf<String>("politics","science","health" ,"business","sports","technology",)
     //val countryList = listOf<String>(" eg" )
     lateinit var searchView: SearchView
-        var tabLayout:TableLayout? = null
-        var viewPager:ViewPager? = null
-         lateinit var  recyclerView :RecyclerView
-        lateinit var newsAdapter : NewsAdapter
-    var searchQueryText =""
-    var data : ArrayList<Result> = ArrayList()
+    var tabLayout: TableLayout? = null
+    var viewPager: ViewPager? = null
+    lateinit var recyclerView: RecyclerView
+    lateinit var newsAdapter: NewsAdapter
+    var searchQueryText = ""
+    var data: ArrayList<Result> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +45,6 @@ class homeFragment : Fragment(),onItemClickListener{
         // Inflate the layout for this fragment
         var home_fragment =  inflater.inflate(R.layout.fragment_home, container, false)
           searchView = home_fragment.findViewById(R.id.search_view)
-
       return  home_fragment
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -100,11 +98,20 @@ class homeFragment : Fragment(),onItemClickListener{
         return filteredProductList
     }
  fun initUI(view: View){
+
  }
-    override fun onItemClicked(news: Result) {
+    override fun onItemClicked(position: Int) {
         var bundle = Bundle()
-        bundle.putString("NEWS", news.toString())
-        val detailsFragment = DetailsFragment()
+        var tittle = newsAdapter.resiltList[position].title
+        var description = newsAdapter.resiltList[position].description
+        var img = newsAdapter.resiltList[position]
+
+
+
+        bundle.putString("NEWSTITTLE", tittle.toString())
+        bundle.putString("NEWSDES", description.toString())
+        bundle.putString("NEWSIMG", img.toString())
+        val detailsFragment = Details_Fragment()
         detailsFragment.arguments = bundle
         fragmentManager?.beginTransaction()?.replace(R.id.nav_host_fragment,detailsFragment)?.commit()
     }

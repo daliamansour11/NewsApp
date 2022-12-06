@@ -24,6 +24,7 @@ class HomeViewModel(private val repository: HomeRepository):ViewModel() {
              mnews_reponse.postValue(reponse.body())
                 Log.i("TAG", "getHomViewModeleNews:${reponse.body()} ")
         }
+
         else{
                 Log.i("TAG", "getHomViewModeleNewseeeeeeerrrrrrrrrrr:${reponse.message()} ")
         }

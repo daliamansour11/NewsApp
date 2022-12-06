@@ -54,6 +54,6 @@ class SportFragment : Fragment(),onItemClickListener {
         })
     }
 
-    override fun onItemClicked(news: Result) {
+    override fun onItemClicked(position: Int) {
     }
 }

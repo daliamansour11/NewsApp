@@ -38,7 +38,7 @@ class SportsAdapter(var context: Context,listener :onItemClickListener):Recycler
             publis_date.text= ("${currentItem.pubDate}")
             //source_name.text= ("${currentItem.sourceId}")
             Glide.with(context).load("${currentItem.imageUrl}")
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_launcher_foreground)
                 .error(R.drawable.ic_baseline_error_outline_24)
                 .into(holder.newsImage)
             root_item.setOnClickListener{
@@ -46,7 +46,6 @@ class SportsAdapter(var context: Context,listener :onItemClickListener):Recycler
             }
         }
     }
-
     override fun getItemCount(): Int {
       return sports.size
     }

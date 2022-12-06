@@ -4,5 +4,5 @@ import com.example.newsapp.home.model.NewsResponse
 import com.example.newsapp.home.model.Result
 
 interface onItemClickListener {
-    fun onItemClicked(news: Result)
+    fun onItemClicked(position: Int)
 }

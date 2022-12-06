@@ -30,11 +30,11 @@ class NewsAdapter(var context: Context,val listener :onItemClickListener) : Recy
         publis_date.text= ("${currentItem.pubDate}")
         //source_name.text= ("${currentItem.sourceId}")
         Glide.with(context).load("${currentItem.imageUrl}")
-            .placeholder(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.ic_launcher_foreground)
             .error(R.drawable.ic_baseline_error_outline_24)
             .into(holder.newsImage)
         root_item.setOnClickListener{
-            listener.onItemClicked(currentItem)
+            listener.onItemClicked(position)
         }
     }
      }
